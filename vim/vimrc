@@ -1,0 +1,64 @@
+
+
+" We want to use Vim and not traditional Vi
+set nocompatible
+
+" Syntax highlighting
+syntax on
+
+" Tab policies
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" AutoIndent
+set autoindent
+
+" Search
+set incsearch
+set hlsearch
+
+" No spurious swap files
+set noswapfile
+
+"
+" -------------
+" Vundle entries
+"
+"
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+" Manage Vundle with Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Bufexplorer
+Plugin 'jlanzarotta/bufexplorer'
+
+" FuzzyFinder
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+
+call vundle#end()
+
+" -------------
+
+"
+" Load Custom Keybindings
+"
+let mapleader = "-"
+
+nnoremap <leader>v :vsplit<cr>
+nnoremap <leader>s :split<cr>
+nnoremap <leader>q :quit<cr>
+
+nnoremap <leader>fb :FufBuffer<cr>
+nnoremap <leader>ff :FufFile<cr>
+
+map <C-B> :BufExplorer<CR>
+
+" File type detection
+filetype plugin indent on
+
