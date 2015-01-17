@@ -1,0 +1,5 @@
+
+" For MacVim
+colorscheme desert
+set guifont=Monaco:h14
+set guioptions=egmrLt
