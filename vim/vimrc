@@ -41,6 +41,9 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
 
 " -------------
@@ -56,6 +59,9 @@ nnoremap <leader>q :quit<cr>
 
 nnoremap <leader>fb :FufBuffer<cr>
 nnoremap <leader>ff :FufFile<cr>
+
+nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ev :edit ~/.vimrc<cr>
 
 map <C-B> :BufExplorer<CR>
 
