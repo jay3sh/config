@@ -58,6 +58,13 @@ call vundle#end()
 " -------------
 "
 
+function! LoadPyClewn()
+  let g:pyclewn_python="python3"
+  map <F10> :C next<cr>
+  map <F11> :C step<cr>
+  nnoremap <leader>pp :Pyclewn pdb ./main.py<cr>
+endfunction
+
 "
 " Load Custom Keybindings
 "
