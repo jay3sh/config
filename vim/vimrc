@@ -59,48 +59,6 @@ call vundle#end()
 "
 
 "
-" Python utility for C++ editor syncing
-"
-function! CppSync()
-python << EOF
-import vim
-import os
-# This regex will fail if there's more than one . in the path
-
-def get_file_name():
-  cur_file_path = vim.current.buffer.name
-  basename = os.path.basename(cur_file_path)
-  filename, extension = os.path.splitext(basename)
-  return [ cur_file_path, filename, extension ]
-
-def open_file_in_split(filepath):
-  if len(vim.windows) <= 1:
-    vim.command('vsplit')
-
-  vim.command('wincmd l')
-  vim.command('e '+filepath)
-  vim.command('set filetype=cpp')
-  vim.command('wincmd h')
-  vim.command('set filetype=cpp')
-
-path, name, extension = get_file_name()
-header_basename = path.replace(extension,'.h')
-open_file_in_split(header_basename)
-
-EOF
-endfunction
-
-" Run CppSync() when any file is loaded
-"autocmd BufNewFile,BufRead *.cpp call CppSync()
-
-"
-" Run main.py in current working directory
-"
-function! RunMainPy()
-  !python3 ./main.py
-endfunction
-
-"
 " Load Custom Keybindings
 "
 let mapleader = "-"
@@ -119,7 +77,7 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch
 nnoremap <leader>pc :PluginClean<cr>
 
-nnoremap <leader>pp :call RunMainPy()<cr>
+nnoremap <leader>pp :!python3 ./main.py<cr>
 nnoremap <leader>po :!python3 %<cr>
 
 map <C-B> :BufExplorer<CR>
