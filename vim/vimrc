@@ -45,10 +45,10 @@ Plugin 'FuzzyFinder'
 Plugin 'Valloric/YouCompleteMe'
 
 " Omnisharp
-Plugin 'nosami/Omnisharp'
+"Plugin 'nosami/Omnisharp'
 
 " Using for automatic Omnisharp server start
-Plugin 'tpope/vim-dispatch'
+"Plugin 'tpope/vim-dispatch'
 
 " Using for Omnisharp code issues and syntax errors
 " DISABLE-FOR-NOW Plugin 'scrooloose/syntastic'
@@ -67,6 +67,15 @@ function! LoadPyClewn()
   map <F12> :exe "C " . expand("<cword>") <CR>
   nnoremap <leader>pp :Pyclewn pdb ./main.py<cr>
 endfunction
+
+function! SetupPython()
+  " Here, you can have the final say on what is set.  So
+  " fixup any settings you don't like.
+  set softtabstop=2
+  set tabstop=2
+  set shiftwidth=2
+endfunction
+command! -bar SetupPython call SetupPython()
 
 "
 " Load Custom Keybindings
