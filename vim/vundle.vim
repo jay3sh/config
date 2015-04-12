@@ -27,7 +27,13 @@ Plugin 'Valloric/YouCompleteMe'
 "Plugin 'tpope/vim-dispatch'
 
 " Using for Omnisharp code issues and syntax errors
-" DISABLE-FOR-NOW Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+
+" Snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
